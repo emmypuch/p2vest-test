@@ -1,0 +1,210 @@
+.transaction-card {
+  background: #654E26;
+  color: white;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__logo {
+    width: 60px;
+  }
+
+  &__title {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    font-family: var(--font-heading);
+  }
+
+  &__social-icons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  &__main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  &__country-left,
+  &__country-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  &__phone-card {
+    width: 100%;
+    max-width: 320px;
+    height: 480px;
+    border: 4px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__lady-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__overlay-card {
+    margin-top: 4rem;
+    font-size: 28px;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    z-index: 1;
+    text-align: center;
+  }
+
+  &__amount {
+    font-weight: bold;
+  }
+
+  &__transaction-info {
+    margin-top: auto;
+    margin-bottom: 1rem;
+    background: rgba(149, 100, 76, 0.5);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      display: block;
+      color: #D0B8AC;
+    }
+  }
+
+  &__transfer-text {
+    span {
+      font-weight: 600;
+      margin: 0.3rem 0;
+      color: #fff !important;
+      font-family: var(--font-primary);
+      font-size: 16px;
+    }
+  }
+
+  &__transfer-amount {
+    color: #fff;
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    margin-top: auto;
+    padding: 1rem;
+    width: 100%;
+
+    p {
+      font-size: 14px;
+      color: #EBE8E3;
+    }
+  }
+
+  &__download {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+      font-size: 14px;
+      color: #B5A88E;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__download-button {
+    margin-top: 0.5rem;
+    background: white;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  // DESKTOP ENHANCEMENTS
+  @media (min-width: 769px) {
+    &__header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__title {
+      font-size: 34px;
+      text-align: left;
+    }
+
+    &__main-content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__country-left {
+      margin-right: 3rem;
+    }
+
+    &__country-right {
+      margin-left: 3rem;
+    }
+
+    &__overlay-card {
+      font-size: 52px;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    &__footer {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+
+      div:first-child {
+        max-width: 60%;
+      }
+
+      p {
+        max-width: 500px;
+        font-size: 16px;
+      }
+    }
+  }
+}
