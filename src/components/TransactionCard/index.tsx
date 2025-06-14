@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 import Image from "next/image";
@@ -10,12 +11,14 @@ const TransactionCard = () => {
     <div className={TransactionCardStyles["transaction-card"]}>
       <header className={TransactionCardStyles["transaction-card__header"]}>
         <div className={TransactionCardStyles["transaction-card__logo"]}>
-          <Image
+          {/* <Image
             src="/assets/images/home-hero-logo.svg"
             alt="Revve Logo"
             width={120}
             height={120}
-          />
+          /> */}
+          <img src="/assets/images/home-hero-logo.svg" alt="test logo" />
+
         </div>
         <h1 className={TransactionCardStyles["transaction-card__title"]}>
           Send. Shop. Spend
