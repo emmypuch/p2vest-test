@@ -96,7 +96,7 @@ const HomeAnimationSection = () => {
           <motion.h2
             className={HomeAnimationStyles.container__title}
             initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 100 }}
+            animate={{ opacity: 1, y: 40 }}
             exit={{ opacity: 0 }}
             transition={{
               type: "spring",

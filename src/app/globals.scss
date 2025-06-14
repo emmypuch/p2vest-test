@@ -19,6 +19,15 @@
     max-width: 100vw;
     overflow-x: hidden;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  motion.div {
+    will-change: transform;
+    transform-style: preserve-3d;
+  }
   
   body {
     color: var(--foreground);

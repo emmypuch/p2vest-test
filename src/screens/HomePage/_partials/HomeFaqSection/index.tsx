@@ -31,7 +31,14 @@ const HomeFaqSection = () => {
           <p className={HomeFaqStyles.container__downloadText}>
             Get Revve on your phone
           </p>
-          <DownloadButton>Download the app</DownloadButton>
+          <DownloadButton
+            style={{
+              background: "#fff",
+              color: "#000",
+            }}
+          >
+            Download the app
+          </DownloadButton>
         </div>
 
         <motion.div

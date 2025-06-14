@@ -131,7 +131,15 @@ const TransactionCard = () => {
         </div>
         <div className={TransactionCardStyles["transaction-card__download"]}>
           <span>Get Revve on your phone</span>
-          <DownloadButton>Download the app</DownloadButton>
+          <DownloadButton
+            style={{
+              background: "transparent",
+              color: "white",
+              border: "1px solid #fff",
+            }}
+          >
+            Download the app
+          </DownloadButton>
         </div>
       </footer>
     </div>
