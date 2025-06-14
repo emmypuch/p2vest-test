@@ -1,12 +1,11 @@
 .transaction-card {
-  background: #654E26;
-  color: white;
   padding: 2rem 1rem;
   min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background-color 0.5s ease, background 0.5s ease;
 
   &__header {
     width: 100%;
@@ -53,14 +52,20 @@
     text-align: center;
   }
 
-  &__phone-card {
+  &__phone-card-container {
+    position: relative;
     width: 100%;
     max-width: 320px;
     height: 480px;
+  }
+
+  &__phone-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     border: 4px solid white;
     border-radius: 20px;
     overflow: hidden;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,7 +93,7 @@
   &__transaction-info {
     margin-top: auto;
     margin-bottom: 1rem;
-    background: rgba(149, 100, 76, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     padding: 1rem;
     border-radius: 12px;
     width: 100%;
@@ -101,7 +106,6 @@
 
     span {
       display: block;
-      color: #D0B8AC;
     }
   }
 
@@ -109,14 +113,12 @@
     span {
       font-weight: 600;
       margin: 0.3rem 0;
-      color: #fff !important;
       font-family: var(--font-primary);
       font-size: 16px;
     }
   }
 
   &__transfer-amount {
-    color: #fff;
     font-family: var(--font-primary);
     font-size: 16px;
     font-weight: 600;
@@ -134,7 +136,6 @@
 
     p {
       font-size: 14px;
-      color: #EBE8E3;
     }
   }
 
@@ -145,7 +146,6 @@
 
     span {
       font-size: 14px;
-      color: #B5A88E;
       margin-bottom: 0.5rem;
     }
   }
