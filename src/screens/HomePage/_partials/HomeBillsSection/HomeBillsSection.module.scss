@@ -1,0 +1,135 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 20px;
+    background-image: url('/assets/images/bills-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+  
+    &__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+  
+    &__info {
+      order: 2;
+    }
+  
+    &__title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+  
+    &__description {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 500px;
+      color: #fff !important;
+    }
+  
+    &__app {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    &__appText {
+      font-size: 16px;
+      opacity: 0.8;
+      color: #fff !important;
+    }
+  
+    &__appButton {
+      background: #fff;
+      color: #000;
+      padding: 20px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 16px;
+      max-width: 200px;
+      border: none;
+      outline: none;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background: transparent;
+        border: 1px solid #fff;
+        color: #fff;
+      }
+    }
+  
+    &__calendar {
+      order: 1;
+      display: flex;
+      justify-content: center;
+      
+      img {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+      }
+    }
+  
+    @media (min-width: 768px) {
+      padding: 60px 40px;
+  
+      &__content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+      }
+  
+      &__info {
+        order: 1;
+        flex: 1;
+      }
+  
+      &__calendar {
+        order: 2;
+        flex: 1;
+        justify-content: flex-end;
+      }
+  
+      &__title {
+        font-size: 48px;
+      }
+  
+      &__description {
+        font-size: 16px;
+      }
+    }
+  
+    @media (min-width: 1024px) {
+      padding: 80px 60px;
+  
+      &__content {
+        gap: 80px;
+      }
+    }
+  }

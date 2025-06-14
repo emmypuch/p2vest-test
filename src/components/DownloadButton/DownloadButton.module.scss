@@ -1,0 +1,49 @@
+.button {
+    margin-top: 0.5rem;
+    padding: 20px 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 200px;
+  
+    &--primary {
+      background: white;
+      color: #000;
+      font-size: 16px;
+      
+      &:hover {
+        background: #f0f0f0;
+      }
+    }
+  
+    &--secondary {
+      background: #4F0172;
+      color: white;
+      
+      &:hover {
+        background: #3a0154;
+      }
+    }
+  
+    &--ghost {
+      background: transparent;
+      color: white;
+      border: 1px solid white;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }

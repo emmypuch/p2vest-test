@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem 0 4rem;
+  text-align: center;
+
+  &__info {
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 0.75rem;
+      color: #555;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__walletImage {
+    margin: 2rem 0;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__iphoneLadyImage {
+    display: none;
+    margin-top: 2rem;
+    position: relative;
+    width: 414px;
+    height: 788px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      display: flex; // show on medium and up
+      flex: 1;
+      justify-content: center;
+      align-items: flex-end;
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: left;
+
+    &__info {
+      flex: 1;
+      max-width: 30%;
+      margin-top: 0;
+
+      p {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &__walletImage {
+      flex: 1;
+    }
+  }
+}

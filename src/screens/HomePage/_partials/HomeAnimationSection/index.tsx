@@ -10,35 +10,68 @@ const HomeAnimationSection = () => {
   const isInView = useInView(ref, { once: true });
   const [showText, setShowText] = useState(false);
 
+  // Scroll to top or next section
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     if (isInView) {
       const timer = setTimeout(() => {
         setShowText(true);
-      }, 800);
-      
+      }, 300); 
+
       return () => clearTimeout(timer);
     }
   }, [isInView]);
 
   return (
-    <div className={HomeAnimationStyles.container} ref={ref}>
+    <div
+      className={HomeAnimationStyles.container}
+      ref={ref}
+      id="animation-section"
+    >
       <div className={HomeAnimationStyles.container__hourGlass}>
-        <motion.div
-          animate={!showText ? { rotateX: [0, 180, 0] } : {}}
-          transition={{
-            repeat: Infinity,
-            duration: 2,
-            ease: "easeInOut",
-          }}
-        >
-          <Image
-            src="/assets/images/hour-glass.svg"
-            alt="Hour Glass"
-            width={20}
-            height={20}
-          />
-        </motion.div>
-        <p>please wait...</p>
+        {!showText ? (
+          <motion.div
+            animate={{ rotateX: [0, 180, 0] }}
+            transition={{
+              repeat: Infinity,
+              duration: 2,
+              ease: "easeInOut",
+            }}
+          >
+            <Image
+              src="/assets/images/hour-glass.svg"
+              alt="Hour Glass"
+              width={20}
+              height={20}
+            />
+          </motion.div>
+        ) : (
+          <div className={HomeAnimationStyles.container__scrollIcons}>
+            <button onClick={() => scrollTo("hero-section")}>
+              <Image
+                src="/assets/images/scroll-up.svg"
+                alt="Scroll Up"
+                width={120}
+                height={20}
+              />
+            </button>
+            <button onClick={() => scrollTo("wallet-section")}>
+              <Image
+                src="/assets/images/scroll-down.svg"
+                alt="Scroll Down"
+                width={120}
+                height={20}
+              />
+            </button>
+          </div>
+        )}
+        {!showText && <p>please wait...</p>}
       </div>
 
       <div className={HomeAnimationStyles.container__image}>
@@ -48,11 +81,11 @@ const HomeAnimationSection = () => {
           layout="fill"
         />
         {showText && (
-          <div className={HomeAnimationStyles.container__textOverlay}>
+          <div className={HomeAnimationStyles.container__textBottom}>
             <p>
               Seamlessly bridge distances with our effortless remittance
-              service. Send support, and financial care to your loved ones
-              back home.
+              service. Send support, and financial care to your loved ones back
+              home.
             </p>
           </div>
         )}

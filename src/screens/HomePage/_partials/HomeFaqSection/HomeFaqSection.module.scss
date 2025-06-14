@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 40px;
+  padding: 40px 20px;
+  background-color: #4f0172;
+  margin: 0 auto;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  &__info {
+    order: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+
+  &__faqIntro {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    max-width: 400px;
+  }
+
+  &__download {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__downloadText {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  &__scrollHint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 5px;
+
+    p {
+      color: #ca92e3;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  &__faq {
+    order: 1;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px 40px;
+    gap: 60px;
+    align-items: center;
+
+    &__info {
+      order: 1;
+      flex: 1;
+      max-width: 400px;
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    &__download {
+      align-items: flex-start;
+    }
+
+    &__faq {
+      order: 2;
+      flex: 1;
+    }
+
+    &__title {
+      font-size: 52px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 80px 60px;
+    gap: 80px;
+  }
+}

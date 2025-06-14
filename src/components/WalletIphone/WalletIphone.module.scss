@@ -1,0 +1,97 @@
+.wrapper {
+    position: relative;
+    width: fit-content;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  
+    &__iphone {
+      z-index: 1;
+  
+      img {
+        width: 100%;
+        max-width: 280px; 
+        height: auto;
+      }
+  
+      @media (min-width: 768px) {
+        img {
+          max-width: 432px; 
+        }
+      }
+    }
+  
+    &__iphoneWallets {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      z-index: 2;
+      width: 100%;
+
+      .walletImage {
+        position: absolute;
+        left: 16%;
+        transform: translateX(-50%);
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+      }
+  
+      @media (min-width: 768px) {
+        transform: translate(-50%, -30%);
+  
+        .walletImage {
+          max-width: 320px;
+        }
+      }
+  
+      img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+      }
+  
+      img:nth-child(1) {
+        top: 0;
+      }
+  
+      img:nth-child(2) {
+        top: 40px;
+      }
+  
+      img:nth-child(3) {
+        top: 80px;
+      }
+  
+      img:nth-child(4) {
+        top: 520px;
+      }
+  
+      @media (min-width: 768px) {
+        transform: translate(-50%, -30%);
+  
+        img {
+          max-width: 320px;
+        }
+  
+        img:nth-child(2) {
+          top: 50px;
+        }
+  
+        img:nth-child(3) {
+          top: 100px;
+        }
+  
+        img:nth-child(4) {
+          top: 150px;
+        }
+      }
+    }
+  }
+  

@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 import TransactionCardStyles from "./TransactionCard.module.scss";
+import DownloadButton from "../DownloadButton";
 
 const TransactionCard = () => {
   return (
@@ -81,29 +82,29 @@ const TransactionCard = () => {
             }
           >
             <div>
-            <Image
-              src="/assets/images/gtb.svg"
-              alt="gtbank logo"
-              width={32}
-              height={32}
-            />
-            <span>Yesterday, 1:28 AM</span>
-            <span
-              className={
-                TransactionCardStyles["transaction-card__transfer-text"]
-              }
-            >
-              Transfer to Lil Sis
-            </span>
+              <Image
+                src="/assets/images/gtb.svg"
+                alt="gtbank logo"
+                width={32}
+                height={32}
+              />
+              <span>Yesterday, 1:28 AM</span>
+              <span
+                className={
+                  TransactionCardStyles["transaction-card__transfer-text"]
+                }
+              >
+                Transfer to Lil Sis
+              </span>
             </div>
             <div>
-            <span
-              className={
-                TransactionCardStyles["transaction-card__transfer-amount"]
-              }
-            >
-              -₦862,912.94
-            </span>
+              <span
+                className={
+                  TransactionCardStyles["transaction-card__transfer-amount"]
+                }
+              >
+                -₦862,912.94
+              </span>
             </div>
           </div>
         </div>
@@ -130,13 +131,7 @@ const TransactionCard = () => {
         </div>
         <div className={TransactionCardStyles["transaction-card__download"]}>
           <span>Get Revve on your phone</span>
-          <button
-            className={
-              TransactionCardStyles["transaction-card__download-button"]
-            }
-          >
-            Download the app
-          </button>
+          <DownloadButton>Download the app</DownloadButton>
         </div>
       </footer>
     </div>
