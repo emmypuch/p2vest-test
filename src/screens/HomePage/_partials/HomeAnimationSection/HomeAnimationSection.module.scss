@@ -25,13 +25,13 @@
   &__image {
     position: relative;
     width: 300px;
-    height: 300px;
+    height: 350px;
     pointer-events: none;
     z-index: 1;
 
     @media (min-width: 769px) {
       width: 400px;
-      height: 400px;
+      height: 450px;
     }
   }
 
@@ -48,9 +48,9 @@
     p {
       font-size: 14px;
       color: #fff;
-      text-align: center;
+      text-align: justify;
       margin: 0 auto;
-      line-height: 1.4;
+      // line-height: 1.4;
     }
 
     @media (min-width: 768px) {
@@ -77,14 +77,14 @@
   &__scrollIcons {
     display: flex;
     justify-content: space-between;
-    height: 60px;
+    // height: 60px;
     gap: 0;
 
     button {
       background: transparent;
       border: none;
       cursor: pointer;
-      padding: 4px;
+      // padding: 4px;
 
       img {
         transition: transform 0.3s ease;

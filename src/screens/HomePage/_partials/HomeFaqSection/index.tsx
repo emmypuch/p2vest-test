@@ -1,13 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import HomeFaqStyles from "./HomeFaqSection.module.scss";
 import FaqContents from "@/components/FaqContents";
 import DownloadButton from "@/components/DownloadButton";
+import DownloadAppModal from "@/components/DownloadAppModal";
 
 const HomeFaqSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false); 
   const handleScrollToNextSection = () => {
     const nextSection = document.getElementById("contact-section");
     if (nextSection) {
@@ -36,6 +38,7 @@ const HomeFaqSection = () => {
               background: "#fff",
               color: "#000",
             }}
+            onClick={() => setIsModalOpen(true)}
           >
             Download the app
           </DownloadButton>
@@ -76,6 +79,11 @@ const HomeFaqSection = () => {
       <div className={HomeFaqStyles.container__faq}>
         <FaqContents />
       </div>
+
+      <DownloadAppModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </div>
   );
 };

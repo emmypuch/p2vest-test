@@ -6,17 +6,18 @@ import Image from "next/image";
 import TransactionCardStyles from "./TransactionCard.module.scss";
 import DownloadButton from "../DownloadButton";
 import { TRANSACTION_DATA } from "@/data/transactionCardData";
+import DownloadAppModal from "../DownloadAppModal";
 
 const TransactionCard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
 
-  // Animation variants
   const cardVariants: Variants = {
     enter: (direction: "left" | "right") => ({
-      x: direction === "right" ? 300 : -300,
+      x: direction === "right" ? "100%" : "-100%",
       opacity: 0,
-      scale: 0.9,
+      scale: 0.95,
     }),
     center: {
       x: 0,
@@ -24,27 +25,49 @@ const TransactionCard = () => {
       scale: 1,
       transition: {
         type: "spring",
-        stiffness: 300,
+        stiffness: 400,
         damping: 30,
+        mass: 0.5,
       } as Transition,
     },
     exit: (direction: "left" | "right") => ({
-      x: direction === "right" ? -300 : 300,
+      x: direction === "right" ? "-100%" : "100%",
       opacity: 0,
-      scale: 0.9,
+      scale: 0.95,
       transition: {
-        duration: 0.2,
+        duration: 0.3,
+        ease: "easeInOut",
       } as Transition,
     }),
   };
 
   const countryVariants: Variants = {
     hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 } as Transition,
+      scale: 1.1,
+      transition: {
+        type: "spring",
+        stiffness: 500,
+        damping: 10,
+      } as Transition,
     },
     tap: {
-      scale: 0.95,
+      scale: 0.9,
+    },
+  };
+
+  const backgroundVariants: Variants = {
+    enter: {
+      opacity: 0,
+    },
+    center: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    exit: {
+      opacity: 0,
     },
   };
 
@@ -64,24 +87,29 @@ const TransactionCard = () => {
 
   const currentData = TRANSACTION_DATA[currentIndex];
 
-  const getBackgroundStyle = () => {
-    if (typeof currentData.backgroundColor === "string") {
-      return { backgroundColor: currentData.backgroundColor };
-    } else {
-      return {
-        background: `linear-gradient(90deg, ${currentData.backgroundColor.gradient[0]}, ${currentData.backgroundColor.gradient[1]})`,
-      };
-    }
-  };
+  const BACKGROUND_IMAGES = [
+    "/assets/images/hero-canada.png",
+    "/assets/images/hero-cad.png",
+    "/assets/images/hero-ngn.png",
+    "/assets/images/hero-gha.png",
+  ];
 
   return (
-    <div
-      className={TransactionCardStyles["transaction-card"]}
-      style={{
-        ...getBackgroundStyle(),
-        color: currentData.textColor,
-      }}
-    >
+    <div className={TransactionCardStyles["transaction-card"]}>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          className={TransactionCardStyles["background-container"]}
+          variants={backgroundVariants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          style={{
+            backgroundImage: `url(${BACKGROUND_IMAGES[currentIndex]})`,
+          }}
+        />
+      </AnimatePresence>
+
       <header className={TransactionCardStyles["transaction-card__header"]}>
         <div className={TransactionCardStyles["transaction-card__logo"]}>
           <Image
@@ -113,7 +141,7 @@ const TransactionCard = () => {
           variants={countryVariants}
           whileHover="hover"
           whileTap="tap"
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", zIndex: 10 }}
         >
           <span>{currentData.leftCountry}</span>
           <Image
@@ -138,19 +166,11 @@ const TransactionCard = () => {
               animate="center"
               exit="exit"
               className={TransactionCardStyles["transaction-card__phone-card"]}
+              style={{
+                borderColor: currentData.textColor,
+                boxShadow: `0 10px 30px rgba(0,0,0,0.2)`,
+              }}
             >
-              <div
-                className={
-                  TransactionCardStyles["transaction-card__lady-image"]
-                }
-              >
-                <Image
-                  src={currentData.image}
-                  alt="transaction visual"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
               <div
                 className={
                   TransactionCardStyles["transaction-card__overlay-card"]
@@ -220,7 +240,7 @@ const TransactionCard = () => {
           variants={countryVariants}
           whileHover="hover"
           whileTap="tap"
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", zIndex: 10 }}
         >
           <span>{currentData.rightCountry}</span>
           <Image
@@ -247,11 +267,17 @@ const TransactionCard = () => {
               color: currentData.textColor,
               border: `1px solid ${currentData.textColor}`,
             }}
+            onClick={() => setIsModalOpen(true)}
           >
             Download the app
           </DownloadButton>
         </div>
       </footer>
+
+      <DownloadAppModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

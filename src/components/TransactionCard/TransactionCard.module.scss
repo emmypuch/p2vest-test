@@ -1,11 +1,23 @@
 .transaction-card {
   padding: 2rem 1rem;
   min-height: 100vh;
-  position: relative;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: background-color 0.5s ease, background 0.5s ease;
+  position: relative;
+  overflow: hidden;
+
+  .background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
 
   &__header {
     width: 100%;
@@ -13,6 +25,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    z-index: 2;
   }
 
   &__logo {
@@ -24,6 +37,7 @@
     text-align: center;
     font-weight: bold;
     font-family: var(--font-heading);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   }
 
   &__social-icons {
@@ -39,6 +53,8 @@
     margin: 2rem 0;
     width: 100%;
     gap: 2rem;
+    position: relative;
+    z-index: 2;
   }
 
   &__country-left,
@@ -50,6 +66,11 @@
     font-weight: 500;
     gap: 0.5rem;
     text-align: center;
+    background: rgba(0,0,0,0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
   }
 
   &__phone-card-container {
@@ -57,6 +78,7 @@
     width: 100%;
     max-width: 320px;
     height: 480px;
+    perspective: 1000px;
   }
 
   &__phone-card {
@@ -69,12 +91,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  &__lady-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
   }
 
   &__overlay-card {
@@ -84,6 +103,8 @@
     border-radius: 16px;
     z-index: 1;
     text-align: center;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
   }
 
   &__amount {
@@ -93,7 +114,7 @@
   &__transaction-info {
     margin-top: auto;
     margin-bottom: 1rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
     padding: 1rem;
     border-radius: 12px;
     width: 100%;
@@ -103,6 +124,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    backdrop-filter: blur(5px);
 
     span {
       display: block;
@@ -133,9 +155,14 @@
     margin-top: auto;
     padding: 1rem;
     width: 100%;
+    z-index: 2;
 
     p {
       font-size: 14px;
+      background: rgba(0,0,0,0.4);
+      padding: 1rem;
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
     }
   }
 

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import HomeHeroSection from "./_partials/HomeHeroSection";
 import HomeAnimationSection from "./_partials/HomeAnimationSection";
@@ -12,7 +14,6 @@ import RevealOnScroll from "@/components/RevealOnScroll";
 function HomePage() {
   return (
     <div className="overflow-x-hidden">
-      {/* Hero with parallax effect */}
       <RevealOnScroll 
         animationType="parallax" 
         duration={1.2} 
@@ -25,7 +26,6 @@ function HomePage() {
         </div>
       </RevealOnScroll>
 
-      {/* Animation section with staggered children */}
       <RevealOnScroll 
         animationType="slideUp" 
         delay={0.2} 
@@ -37,7 +37,6 @@ function HomePage() {
         <HomeAnimationSection />
       </RevealOnScroll>
 
-      {/* Wallet section with 3D flip */}
       <RevealOnScroll 
         animationType="flipY" 
         delay={0.3} 
@@ -50,7 +49,6 @@ function HomePage() {
         </div>
       </RevealOnScroll>
 
-      {/* Shop section with zoom and slight rotation */}
       <RevealOnScroll 
         animationType="zoom" 
         delay={0.2} 
@@ -62,7 +60,6 @@ function HomePage() {
         <HomeShopSection />
       </RevealOnScroll>
 
-      {/* Bills section with horizontal slide */}
       <RevealOnScroll 
         animationType="slideRight" 
         delay={0.3} 
@@ -73,7 +70,6 @@ function HomePage() {
         <HomeBillsSection />
       </RevealOnScroll>
 
-      {/* FAQ with staggered items */}
       <RevealOnScroll 
         animationType="fade" 
         delay={0.1}
@@ -84,7 +80,6 @@ function HomePage() {
         <HomeFaqSection />
       </RevealOnScroll>
 
-      {/* Contact with dramatic slide up */}
       <RevealOnScroll 
         animationType="slideUp" 
         delay={0.2} 
@@ -97,7 +92,6 @@ function HomePage() {
         </div>
       </RevealOnScroll>
 
-      {/* Footer with simple but elegant fade */}
       <RevealOnScroll 
         animationType="fade" 
         delay={0.4}
@@ -108,6 +102,7 @@ function HomePage() {
       </RevealOnScroll>
     </div>
   );
+
 }
 
 export default HomePage;

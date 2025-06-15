@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import HomeShopStyles from "./HomeShopSection.module.scss";
 import ShopImages from "@/components/ShopImages";
 import DownloadButton from "@/components/DownloadButton";
+import DownloadAppModal from "@/components/DownloadAppModal";
 
 const HomeShopSection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className={HomeShopStyles.container}>
       <div className={HomeShopStyles.container__content}>
@@ -26,6 +29,7 @@ const HomeShopSection = () => {
               background: "#000",
               color: "white",
             }}
+            onClick={() => setIsModalOpen(true)}
           >
             Download the app
           </DownloadButton>
@@ -35,6 +39,11 @@ const HomeShopSection = () => {
       <div className={HomeShopStyles.container__images}>
         <ShopImages />
       </div>
+
+      <DownloadAppModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

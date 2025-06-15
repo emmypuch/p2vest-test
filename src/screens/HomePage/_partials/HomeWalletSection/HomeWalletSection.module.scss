@@ -8,10 +8,12 @@
   background: #fff;
 
   &__info {
+    margin-top: 3rem;
     h2 {
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 1rem;
+      
       color: #000;
     }
 
@@ -48,7 +50,7 @@
     }
 
     @media (min-width: 768px) {
-      display: flex; // show on medium and up
+      display: flex; 
       flex: 1;
       justify-content: center;
       align-items: flex-end;
@@ -58,13 +60,17 @@
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    padding-left: 60px;
+    padding-right: 60px;
     text-align: left;
 
     &__info {
       flex: 1;
       max-width: 30%;
-      margin-top: 0;
+      
+      h2 {
+        padding-bottom: 40px;
+      }
 
       p {
         margin-left: 0;

@@ -8,8 +8,6 @@ export interface TransactionData {
   description: string;
   flag: string;
   bankLogo: string;
-  image: string;
-  backgroundColor: string | { gradient: [string, string] };
   textColor: string;
 }
 
@@ -24,8 +22,6 @@ export const TRANSACTION_DATA: TransactionData[] = [
     description: "Transfer to Lil Sis",
     flag: "/assets/images/canada.svg",
     bankLogo: "/assets/images/gtb.svg",
-    image: "/assets/images/home-hero-lady.png",
-    backgroundColor: "#654E26",
     textColor: "#FFFFFF",
   },
   {
@@ -38,8 +34,6 @@ export const TRANSACTION_DATA: TransactionData[] = [
     description: "Monthly Support",
     flag: "/assets/images/uk.svg",
     bankLogo: "/assets/images/barclays.svg",
-    image: "/assets/images/man-smiling.png",
-    backgroundColor: "#17282F",
     textColor: "#FFFFFF",
   },
   {
@@ -52,8 +46,6 @@ export const TRANSACTION_DATA: TransactionData[] = [
     description: "School Fees",
     flag: "/assets/images/usa.svg",
     bankLogo: "/assets/images/chase.svg",
-    image: "/assets/images/family.png",
-    backgroundColor: { gradient: ["#461D34", "#A1537E"] },
     textColor: "#FFFFFF",
   },
   {
@@ -66,8 +58,6 @@ export const TRANSACTION_DATA: TransactionData[] = [
     description: "School Fees",
     flag: "/assets/images/usa.svg",
     bankLogo: "/assets/images/chase.svg",
-    image: "/assets/images/family.png",
-    backgroundColor: "#271408",
     textColor: "#FFFFFF",
   },
 ];

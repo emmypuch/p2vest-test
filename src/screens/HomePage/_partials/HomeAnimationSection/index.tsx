@@ -22,7 +22,7 @@ const HomeAnimationSection = () => {
     if (isInView) {
       const timer = setTimeout(() => {
         setShowText(true);
-      }, 300); 
+      }, 300);
 
       return () => clearTimeout(timer);
     }
