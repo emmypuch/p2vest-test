@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import HomeBillsStyles from "./HomeBillsSection.module.scss";
 import calendarImg from "../../../../../public/assets/images/bills-calendar.png"
 
@@ -25,8 +25,17 @@ const HomeBillsSection = () => {
             </button>
           </div>
         </div>
+        <div className={HomeBillsStyles.wrapper__calendar}>
+        <Image
+            src={calendarImg}
+            alt="Calendar"
+            width={340}
+            height={588}
+            priority
+          />
+        </div>
 
-        <motion.div
+        {/* <motion.div
           className={HomeBillsStyles.wrapper__calendar}
           whileHover={{
             scale: 1.05,
@@ -48,7 +57,7 @@ const HomeBillsSection = () => {
             height={588}
             priority
           />
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
