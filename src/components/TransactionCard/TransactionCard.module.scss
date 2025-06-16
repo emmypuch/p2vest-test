@@ -61,7 +61,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 500;
     gap: 10px;
     text-align: center;
@@ -200,7 +200,7 @@
     }
 
     &__title {
-      font-size: 34px;
+      font-size: 64px;
       text-align: left;
     }
 
@@ -209,13 +209,9 @@
       justify-content: space-between;
     }
 
-    // &__country-left {
-    //   margin-right: 60px;
-    // }
-
-    // &__country-right {
-    //   margin-left: 60px;
-    // }
+    &__country-left, &__country-right {
+      font-size: 52px;
+    }
 
     &__overlay-card {
       font-size: 52px;

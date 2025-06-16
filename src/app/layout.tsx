@@ -1,6 +1,23 @@
 import React from "react";
 import { Toaster } from "sonner";
+import { DM_Sans } from "next/font/google";
+import { Paytone_One } from "next/font/google";
+
 import "./globals.scss";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-primary",
+  display: "swap",
+});
+
+const paytoneOne = Paytone_One({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-heading",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -8,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${dmSans.variable} ${paytoneOne.variable}`}>
       <body>
         <div>{children}</div>
         <Toaster

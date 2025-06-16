@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React from "react";
-import Image from "next/image";
+// import Image from "next/image";
 import { motion } from "framer-motion";
 import HomeBillsStyles from "./HomeBillsSection.module.scss";
 
@@ -40,13 +41,14 @@ const HomeBillsSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <Image
+          {/* <Image
             src="/assets/images/bills-calendar.png"
             alt="Calendar"
             width={340}
             height={588}
             priority
-          />
+          /> */}
+          <img src="/assets/images/bills-calendar.png" alt="" />
         </motion.div>
       </div>
     </section>

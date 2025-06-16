@@ -105,7 +105,7 @@ const HomeAnimationSection = () => {
               delay: 0.5,
             }}
           >
-            Send and Receive Money
+            Send and Receive <br /> Money
           </motion.h2>
         )}
       </AnimatePresence>
