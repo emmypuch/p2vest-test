@@ -204,21 +204,34 @@ const TransactionCard = () => {
                   TransactionCardStyles["transaction-card__transaction-info"]
                 }
               >
-                <div>
+                <div
+                  className={
+                    TransactionCardStyles["transaction-card__info-group"]
+                  }
+                >
                   <Image
                     src={currentData.bankLogo}
                     alt="bank logo"
                     width={32}
                     height={32}
-                  />
-                  <span>{currentData.date}</span>
-                  <span
                     className={
-                      TransactionCardStyles["transaction-card__transfer-text"]
+                      TransactionCardStyles["transaction-card__bank-logo"]
+                    }
+                  />
+                  <div
+                    className={
+                      TransactionCardStyles["transaction-card__text-group"]
                     }
                   >
-                    {currentData.description}
-                  </span>
+                    <span>{currentData.date}</span>
+                    <span
+                      className={
+                        TransactionCardStyles["transaction-card__transfer-text"]
+                      }
+                    >
+                      {currentData.description}
+                    </span>
+                  </div>
                 </div>
                 <div>
                   <span
