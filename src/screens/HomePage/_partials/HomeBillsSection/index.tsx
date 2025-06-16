@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React from "react";
-// import Image from "next/image";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import HomeBillsStyles from "./HomeBillsSection.module.scss";
 
@@ -48,7 +47,13 @@ const HomeBillsSection = () => {
             height={588}
             priority
           /> */}
-          <img src="/assets/images/bills-calendar.png" alt="" />
+          {/* <img src="/assets/images/bills-calendar.png" alt="" /> */}
+          <Image
+            src="/assets/images/iphone-girl.png"
+            alt="Girl with iPhone"
+            fill
+            style={{ objectFit: "cover" }}
+          />
         </motion.div>
       </div>
     </section>
