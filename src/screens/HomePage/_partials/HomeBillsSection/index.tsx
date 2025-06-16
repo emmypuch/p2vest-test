@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import HomeBillsStyles from "./HomeBillsSection.module.scss";
+import calendarImg from "../../../../../public/assets/images/bills-calendar.png"
 
 const HomeBillsSection = () => {
   return (
@@ -40,19 +41,12 @@ const HomeBillsSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {/* <Image
-            src="/assets/images/bills-calendar.png"
+          <Image
+            src={calendarImg}
             alt="Calendar"
             width={340}
             height={588}
             priority
-          /> */}
-          {/* <img src="/assets/images/bills-calendar.png" alt="" /> */}
-          <Image
-            src="/assets/images/iphone-girl.png"
-            alt="Girl with iPhone"
-            fill
-            style={{ objectFit: "cover" }}
           />
         </motion.div>
       </div>
