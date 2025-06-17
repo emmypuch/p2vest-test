@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import AnimatedImagesStyles from "./AnimatedImages.module.scss";
 
 const imageData = [
   { src: "/assets/images/sendA.png", alt: "Send A", x: -50, y: -30, rotate: -5 },
@@ -15,7 +16,7 @@ const imageData = [
 
 const AnimatedImages = () => {
   return (
-    <div className="animated-images-container">
+    <div className={AnimatedImagesStyles.wrapper}>
       {imageData.map((image, index) => (
         <motion.div
           key={index}

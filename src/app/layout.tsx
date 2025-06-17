@@ -4,6 +4,7 @@ import { DM_Sans } from "next/font/google";
 import { Paytone_One } from "next/font/google";
 
 import "./globals.scss";
+import { BackgroundProvider } from "@/components/BackgroundContext";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -27,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${paytoneOne.variable}`}>
       <body>
-        <div>{children}</div>
+        {/* <div>{children}</div> */}
+        <BackgroundProvider>
+          {children}
+        </BackgroundProvider>
         <Toaster
           position="top-center"
           richColors

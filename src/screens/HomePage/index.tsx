@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import HomeHeroSection from "./_partials/HomeHeroSection";
 import HomeAnimationSection from "./_partials/HomeAnimationSection";
 import HomeWalletSection from "./_partials/HomeWalletSection";
@@ -12,34 +12,45 @@ import HomeFooterSection from "./_partials/HomeFooterSection";
 import RevealOnScroll from "@/components/RevealOnScroll";
 
 function HomePage() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+
+  const nextSlide = () => {
+    setDirection("right");
+    setCurrentIndex((prevIndex) => (prevIndex === 3 ? 0 : prevIndex + 1));
+  };
+
+  const prevSlide = () => {
+    setDirection("left");
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? 3 : prevIndex - 1));
+  };
+
   return (
     <div className="overflow-x-hidden">
-      <RevealOnScroll 
-        animationType="parallax" 
-        duration={1.2} 
+      <RevealOnScroll
+        animationType="parallax"
+        duration={1.2}
         delay={0.1}
         yOffset={80}
         className="will-change-transform"
       >
         <div id="hero-section">
-          <HomeHeroSection />
+          <HomeHeroSection
+            currentIndex={currentIndex}
+            direction={direction}
+            nextSlide={nextSlide}
+            prevSlide={prevSlide}
+          />
         </div>
       </RevealOnScroll>
 
-      <RevealOnScroll 
-        animationType="slideUp" 
-        delay={0.2} 
-        yOffset={60}
-        staggerChildren={0.5}
-        duration={0.8}
-        easing="cubic-bezier(0.22, 1, 0.36, 1)"
-      >
-        <HomeAnimationSection />
+      <RevealOnScroll animationType="slideUp" delay={0.2}>
+        <HomeAnimationSection currentIndex={currentIndex} />
       </RevealOnScroll>
 
-      <RevealOnScroll 
-        animationType="flipY" 
-        delay={0.3} 
+      <RevealOnScroll
+        animationType="flipY"
+        delay={0.3}
         duration={1}
         easing="cubic-bezier(0.34, 1.56, 0.64, 1)"
         className="perspective-1000"
@@ -49,9 +60,9 @@ function HomePage() {
         </div>
       </RevealOnScroll>
 
-      <RevealOnScroll 
-        animationType="zoom" 
-        delay={0.2} 
+      <RevealOnScroll
+        animationType="zoom"
+        delay={0.2}
         duration={1.1}
         scale={0.88}
         easing="cubic-bezier(0.32, 0, 0.67, 0)"
@@ -60,9 +71,9 @@ function HomePage() {
         <HomeShopSection />
       </RevealOnScroll>
 
-      <RevealOnScroll 
-        animationType="slideRight" 
-        delay={0.3} 
+      <RevealOnScroll
+        animationType="slideRight"
+        delay={0.3}
         xOffset={120}
         duration={0.9}
         easing="cubic-bezier(0.65, 0, 0.35, 1)"
@@ -70,8 +81,8 @@ function HomePage() {
         <HomeBillsSection />
       </RevealOnScroll>
 
-      <RevealOnScroll 
-        animationType="fade" 
+      <RevealOnScroll
+        animationType="fade"
         delay={0.1}
         staggerChildren={0.15}
         staggerDirection={-1}
@@ -80,9 +91,9 @@ function HomePage() {
         <HomeFaqSection />
       </RevealOnScroll>
 
-      <RevealOnScroll 
-        animationType="slideUp" 
-        delay={0.2} 
+      <RevealOnScroll
+        animationType="slideUp"
+        delay={0.2}
         yOffset={100}
         duration={1.2}
         easing="cubic-bezier(0.12, 0, 0.39, 0)"
@@ -92,8 +103,8 @@ function HomePage() {
         </div>
       </RevealOnScroll>
 
-      <RevealOnScroll 
-        animationType="fade" 
+      <RevealOnScroll
+        animationType="fade"
         delay={0.4}
         duration={1.5}
         easing="cubic-bezier(0.22, 1, 0.36, 1)"
@@ -102,7 +113,6 @@ function HomePage() {
       </RevealOnScroll>
     </div>
   );
-
 }
 
 export default HomePage;

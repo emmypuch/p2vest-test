@@ -5,10 +5,23 @@ import Image from "next/image";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import HomeAnimationStyles from "./HomeAnimationSection.module.scss";
 
-const HomeAnimationSection = () => {
+interface HomeAnimationSectionProps {
+  currentIndex: number;
+}
+
+const HomeAnimationSection: React.FC<HomeAnimationSectionProps> = ({
+  currentIndex,
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const [showText, setShowText] = useState(false);
+
+  const ANIMATION_IMAGES = [
+    "/assets/images/animation-lady.png",
+    "/assets/images/sub-bg1.png",
+    "/assets/images/sub-bg4.png",
+    "/assets/images/sub-bg3.png",
+  ];
 
   // Scroll to top or next section
   const scrollTo = (id: string) => {
@@ -75,11 +88,14 @@ const HomeAnimationSection = () => {
       </div>
 
       <div className={HomeAnimationStyles.container__image}>
+        {/* sub images that would switch as the hero background images is in view */}
         <Image
-          src="/assets/images/animation-lady.png"
-          alt="lady"
+          src={ANIMATION_IMAGES[currentIndex]}
+          alt="Animation content"
           layout="fill"
+          objectFit="contain"
         />
+
         {showText && (
           <div className={HomeAnimationStyles.container__textBottom}>
             <p>

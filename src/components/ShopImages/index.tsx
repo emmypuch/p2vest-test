@@ -4,7 +4,6 @@ import Image from "next/image";
 import ShopImagesStyles from "./ShopImages.module.scss";
 
 const ShopImages = () => {
-  // Properly typed animation variants
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {

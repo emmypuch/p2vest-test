@@ -1,13 +1,29 @@
+import TransactionCard from "@/components/TransactionCard";
+import React from "react";
 
-import TransactionCard from '@/components/TransactionCard'
-import React from 'react'
-
-const HomeHeroSection = () => {
-  return (
-    <div>
-      <TransactionCard />
-    </div>
-  )
+interface HomeHeroSectionProps {
+  currentIndex: number;
+  direction: "left" | "right";
+  nextSlide: () => void;
+  prevSlide: () => void;
 }
 
-export default HomeHeroSection
+const HomeHeroSection: React.FC<HomeHeroSectionProps> = ({
+  currentIndex,
+  direction,
+  nextSlide,
+  prevSlide,
+}) => {
+  return (
+    <div>
+      <TransactionCard
+        currentIndex={currentIndex}
+        direction={direction}
+        nextSlide={nextSlide}
+        prevSlide={prevSlide}
+      />
+    </div>
+  );
+};
+
+export default HomeHeroSection;

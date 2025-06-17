@@ -8,10 +8,20 @@ import DownloadButton from "../DownloadButton";
 import { TRANSACTION_DATA } from "@/data/transactionCardData";
 import DownloadAppModal from "../DownloadAppModal";
 
-const TransactionCard = () => {
+interface TransactionCardProps {
+  currentIndex: number;
+  direction: "left" | "right";
+  nextSlide: () => void;
+  prevSlide: () => void;
+}
+
+const TransactionCard: React.FC<TransactionCardProps> = ({
+  currentIndex,
+  direction,
+  nextSlide,
+  prevSlide,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState<"left" | "right">("right");
 
   const cardVariants: Variants = {
     enter: (direction: "left" | "right") => ({
@@ -71,19 +81,6 @@ const TransactionCard = () => {
     },
   };
 
-  const nextSlide = () => {
-    setDirection("right");
-    setCurrentIndex((prevIndex) =>
-      prevIndex === TRANSACTION_DATA.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setDirection("left");
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? TRANSACTION_DATA.length - 1 : prevIndex - 1
-    );
-  };
 
   const currentData = TRANSACTION_DATA[currentIndex];
 

@@ -69,6 +69,7 @@
       order: 2;
       flex: 1;
       justify-content: flex-end; 
+      margin-right: -40px;
     }
 
     &__title {
@@ -87,5 +88,9 @@
   @media (min-width: 1024px) {
     padding: 60px 80px;
     gap: 80px;
+
+    &__images {
+      margin-right: -80px; 
+    }
   }
 }
