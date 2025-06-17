@@ -70,6 +70,7 @@ const ShopImages = () => {
           width={432}
           height={836}
           priority
+          unoptimized
           className={ShopImagesStyles.wrapper__image}
         />
       </motion.div>
@@ -85,6 +86,7 @@ const ShopImages = () => {
             alt="Perfume"
             width={120}
             height={792}
+            unoptimized
             className={ShopImagesStyles.wrapper__image}
           />
         </motion.div>
@@ -99,6 +101,7 @@ const ShopImages = () => {
             alt="Fashion Girl"
             width={120}
             height={792}
+            unoptimized
             className={ShopImagesStyles.wrapper__image}
           />
         </motion.div>
@@ -113,6 +116,7 @@ const ShopImages = () => {
             alt="Shoe"
             width={256}
             height={792}
+            unoptimized
             className={ShopImagesStyles.wrapper__image}
           />
         </motion.div>

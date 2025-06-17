@@ -30,6 +30,7 @@ const FaqContents = () => {
                 alt={activeIndex === index ? "Collapse" : "Expand"}
                 width={60}
                 height={60}
+                unoptimized
                 className={`${FaqContentsStyles.faqIcon} ${
                   activeIndex === index ? FaqContentsStyles.rotateIcon : ""
                 }`}

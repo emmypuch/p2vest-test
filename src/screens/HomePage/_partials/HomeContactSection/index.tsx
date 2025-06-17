@@ -79,6 +79,7 @@ const HomeContactSection = () => {
             alt="Mail"
             width={297}
             height={238}
+            unoptimized
             className={HomeContactStyles.contact__graphic}
           />
         </div>
@@ -88,6 +89,7 @@ const HomeContactSection = () => {
             alt="Message"
             width={270}
             height={286}
+            unoptimized
             className={HomeContactStyles.contact__graphic}
           />
           <Image
@@ -95,6 +97,7 @@ const HomeContactSection = () => {
             alt="Phone"
             width={288}
             height={286}
+            unoptimized
             className={HomeContactStyles.contact__graphic}
           />
         </div>

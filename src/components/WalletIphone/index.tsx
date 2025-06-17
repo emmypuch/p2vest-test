@@ -51,6 +51,7 @@ const WalletIphone = () => {
           alt="Iphone"
           width={432}
           height={836}
+          unoptimized
         />
       </div>
 
@@ -72,6 +73,7 @@ const WalletIphone = () => {
               alt={wallet.alt}
               width={wallet.width}
               height={wallet.height}
+              unoptimized
             />
           </motion.div>
         ))}

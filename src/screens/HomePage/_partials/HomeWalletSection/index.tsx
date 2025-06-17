@@ -33,6 +33,7 @@ const HomeWalletSection = () => {
             alt="Girl with iPhone"
             layout="fill"
             objectFit="cover"
+            unoptimized
           />
         </div>
       </div>

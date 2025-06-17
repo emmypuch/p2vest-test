@@ -34,6 +34,7 @@ const SocialLink = ({ href, src, alt }: SocialLink) => (
       alt={alt}
       width={20}
       height={20}
+      unoptimized
       className={HomeFooterStyles.footer__socialIcon}
     />
   </Link>

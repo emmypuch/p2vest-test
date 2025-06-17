@@ -26,6 +26,7 @@ const DownloadAppModal = ({ isOpen, onClose }: DownloadAppModalProps) => {
                 alt="Android"
                 width={20}
                 height={20}
+                unoptimized
                 className={DownloadAppModalStyles.platformButton__icon}
               />
               <span className={DownloadAppModalStyles.platformButton__label}>Android</span>
@@ -37,6 +38,7 @@ const DownloadAppModal = ({ isOpen, onClose }: DownloadAppModalProps) => {
                 alt="iPhone"
                 width={20}
                 height={20}
+                unoptimized
                 className={DownloadAppModalStyles.platformButton__icon}
               />
               <span className={DownloadAppModalStyles.platformButton__label}>iPhone</span>
@@ -49,6 +51,7 @@ const DownloadAppModal = ({ isOpen, onClose }: DownloadAppModalProps) => {
               alt="QR Code"
               width={200}
               height={200}
+              unoptimized
               className={DownloadAppModalStyles.qrCode}
             />
           </div>

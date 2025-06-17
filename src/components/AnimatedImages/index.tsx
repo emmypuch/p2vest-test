@@ -44,6 +44,7 @@ const AnimatedImages = () => {
             alt={image.alt}
             width={100}
             height={100}
+            unoptimized
           />
         </motion.div>
       ))}

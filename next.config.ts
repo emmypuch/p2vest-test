@@ -1,20 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export', 
   images: {
-    // For Netlify deployment
-    loader: "custom",
-    loaderFile: "./image-loader.js", 
-    domains: [
-      "revve.netlify.app/", 
-      "localhost" 
-    ],
-    minimumCacheTTL: 60, // Cache images for 60 seconds
-    formats: ["image/webp"], // Modern format support
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    unoptimized: true, 
   },
-  // Other Next.js config options...
+  // Optional: Add if using internationalized routing
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 };
 
 export default nextConfig;

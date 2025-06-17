@@ -62,6 +62,7 @@ const HomeAnimationSection: React.FC<HomeAnimationSectionProps> = ({
               alt="Hour Glass"
               width={20}
               height={20}
+              unoptimized
             />
           </motion.div>
         ) : (
@@ -72,6 +73,7 @@ const HomeAnimationSection: React.FC<HomeAnimationSectionProps> = ({
                 alt="Scroll Up"
                 width={120}
                 height={20}
+                unoptimized
               />
             </button>
             <button onClick={() => scrollTo("wallet-section")}>
@@ -80,6 +82,7 @@ const HomeAnimationSection: React.FC<HomeAnimationSectionProps> = ({
                 alt="Scroll Down"
                 width={120}
                 height={20}
+                unoptimized
               />
             </button>
           </div>
@@ -94,6 +97,7 @@ const HomeAnimationSection: React.FC<HomeAnimationSectionProps> = ({
           alt="Animation content"
           layout="fill"
           objectFit="contain"
+          unoptimized
         />
 
         {showText && (

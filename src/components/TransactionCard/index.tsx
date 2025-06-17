@@ -114,6 +114,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
             alt="Revve Logo"
             width={120}
             height={120}
+            unoptimized
           />
         </div>
         <h1 className={TransactionCardStyles["transaction-card__title"]}>
@@ -127,6 +128,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
             alt="Icons"
             width={76}
             height={48}
+            unoptimized
           />
         </div>
       </header>
@@ -146,6 +148,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
             alt="right arrow"
             width={50}
             height={50}
+            unoptimized
           />
         </motion.div>
 
@@ -181,6 +184,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
                     alt={`${currentData.leftCountry} Flag`}
                     width={52}
                     height={52}
+                    unoptimized
                   />
                 </div>
                 <div
@@ -211,6 +215,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
                     alt="bank logo"
                     width={32}
                     height={32}
+                    unoptimized
                     className={
                       TransactionCardStyles["transaction-card__bank-logo"]
                     }
@@ -258,6 +263,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
             alt="left arrow"
             width={50}
             height={50}
+            unoptimized
           />
         </motion.div>
       </main>

@@ -47,6 +47,7 @@ const HomeBillsSection = () => {
             width={340}
             height={588}
             priority
+            unoptimized
           />
         </motion.div>
       </div>

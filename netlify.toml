@@ -1,9 +1,11 @@
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "npm run build && npm run export"
+  publish = "out"
+  functions = ".next/serverless"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
+  NEXT_PUBLIC_IS_NETLIFY = "true"
   ENABLE_IMAGE_OPTIMIZER = "true"
