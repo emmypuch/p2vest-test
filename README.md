@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# P2Vest Frontend Developer Test
 
-## Getting Started
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), developed as part of the technical assessment for the Frontend Developer position at **P2Vest**.
 
-First, run the development server:
+The project demonstrates strong proficiency in modern frontend development, including responsive layouts, animation, form handling, and third-party integrations.
 
-```bash
+---
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: SCSS (Sass Modules) with BEM methodology
+- **Forms**: Formik + Yup
+- **Animation**: Framer Motion
+- **Notifications**: Sonner
+- **Media Upload**: Cloudinary
+- **Deployment**: Netlify (with plugin support)
+
+---
+
+## 📦 Installation & Setup
+
+npm install
+# or
+yarn install
+
+## ▶️ Run the development server
+
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 with your browser to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 File Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+├── app/
+│   └── page.tsx                # Main page
+├── components/                 # Reusable shared components
+├── screens/                    # Screen sections like HomePage
+├── styles/                     # SCSS modules using BEM
+├── public/                     # Static assets
+├── .eslintrc.js                # Linting configuration
+├── next.config.js              # Next.js configuration
+├── package.json                # Project metadata & dependencies
+└── tsconfig.json               # TypeScript configuration
 
-## Learn More
+## 📚 Learn More About Next.js
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js Documentation – Learn about Next.js features and APIs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js Learn – Interactive tutorial to learn Next.js step by step.
 
-## Deploy on Vercel
+- Next.js GitHub – Contribute or explore more.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/emmypuch/p2vest-test.git
+cd p2vest-test

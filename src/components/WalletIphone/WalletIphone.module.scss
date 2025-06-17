@@ -73,7 +73,7 @@
     img {
       position: absolute;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translateX(-55%);
       max-width: 250px;
       width: 100%;
       height: auto;
@@ -92,7 +92,7 @@
     }
 
     img:nth-child(4) {
-      top: 520px;
+      top: 50px;
     }
 
     @media (min-width: 768px) {

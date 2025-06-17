@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import HomeHeroSection from "./_partials/HomeHeroSection";
-import HomeAnimationSection from "./_partials/HomeAnimationSection";
+// import HomeAnimationSection from "./_partials/HomeAnimationSection";
 import HomeWalletSection from "./_partials/HomeWalletSection";
 import HomeShopSection from "./_partials/HomeShopSection";
 import HomeBillsSection from "./_partials/HomeBillsSection";
@@ -10,6 +10,7 @@ import HomeFaqSection from "./_partials/HomeFaqSection";
 import HomeContactSection from "./_partials/HomeContactSection";
 import HomeFooterSection from "./_partials/HomeFooterSection";
 import RevealOnScroll from "@/components/RevealOnScroll";
+import CombinedSection from "@/components/CombinedSection";
 
 function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,13 +28,8 @@ function HomePage() {
 
   return (
     <div className="overflow-x-hidden">
-      <RevealOnScroll
-        animationType="parallax"
-        duration={1.2}
-        delay={0.1}
-        yOffset={80}
-        className="will-change-transform"
-      >
+    <RevealOnScroll animationType="fade" delay={0.1}>
+
         <div id="hero-section">
           <HomeHeroSection
             currentIndex={currentIndex}
@@ -45,8 +41,14 @@ function HomePage() {
       </RevealOnScroll>
 
       <RevealOnScroll animationType="slideUp" delay={0.2}>
+  <CombinedSection currentIndex={currentIndex} />
+</RevealOnScroll>
+
+
+
+      {/* <RevealOnScroll animationType="slideUp" delay={0.2}>
         <HomeAnimationSection currentIndex={currentIndex} />
-      </RevealOnScroll>
+      </RevealOnScroll> */}
 
       <RevealOnScroll
         animationType="flipY"

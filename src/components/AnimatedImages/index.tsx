@@ -5,25 +5,23 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedImagesStyles from "./AnimatedImages.module.scss";
 import cloudinaryLoader from "@/lib/cloudinaryLoader";
+import { imageData } from "@/data/imageData";
 
-const imageData = [
-  { src: "/assets/images/sendA.png", alt: "Send A", x: -50, y: -30, rotate: -5 },
-  { src: "/assets/images/currency.png", alt: "Currency", x: 40, y: -50, rotate: 3 },
-  { src: "/assets/images/shopping.png", alt: "Shopping", x: -30, y: 40, rotate: -2 },
-  { src: "/assets/images/eating.png", alt: "Eating", x: 50, y: 30, rotate: 4 },
-  { src: "/assets/images/paper-plane.png", alt: "Paper Plane", x: -20, y: -60, rotate: -8 },
-  { src: "/assets/images/send.png", alt: "Send", x: 60, y: -20, rotate: 6 },
-];
+interface AnimatedImagesProps {
+  count?: number;
+  startIndex?: number;
+}
 
-const AnimatedImages = () => {
+const AnimatedImages = ({ count = 6, startIndex = 0 }: AnimatedImagesProps) => {
+  const imagesToShow = imageData.slice(startIndex, startIndex + count);
+
   return (
     <div className={AnimatedImagesStyles.wrapper}>
-      {imageData.map((image, index) => (
+      {imagesToShow.map((image, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, x: image.x, y: image.y, rotate: image.rotate }}
-          animate={{ 
-            opacity: 1,
+          initial={{ x: image.x, y: image.y, rotate: image.rotate }}
+          animate={{
             x: [image.x, image.x + 5, image.x],
             y: [image.y, image.y + 5, image.y],
             rotate: [image.rotate, image.rotate + 2, image.rotate],
@@ -41,11 +39,11 @@ const AnimatedImages = () => {
           }}
         >
           <Image
-          loader={cloudinaryLoader}
+            loader={cloudinaryLoader}
             src={image.src}
             alt={image.alt}
-            width={100}
-            height={100}
+            width={152}
+            height={152}
             unoptimized
           />
         </motion.div>

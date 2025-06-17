@@ -22,7 +22,7 @@ const HomeWalletSection = () => {
             flexibility in global transactions
           </p>
         </div>
-        
+
         <div className={HomeWalletStyles.container__walletImage}>
           <WalletIphone />
         </div>
