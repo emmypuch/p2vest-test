@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import HomeHeroSection from "./_partials/HomeHeroSection";
-// import HomeAnimationSection from "./_partials/HomeAnimationSection";
 import HomeWalletSection from "./_partials/HomeWalletSection";
 import HomeShopSection from "./_partials/HomeShopSection";
 import HomeBillsSection from "./_partials/HomeBillsSection";
@@ -28,8 +27,7 @@ function HomePage() {
 
   return (
     <div className="overflow-x-hidden">
-    <RevealOnScroll animationType="fade" delay={0.1}>
-
+      <RevealOnScroll animationType="fade" delay={0.1}>
         <div id="hero-section">
           <HomeHeroSection
             currentIndex={currentIndex}
@@ -41,14 +39,8 @@ function HomePage() {
       </RevealOnScroll>
 
       <RevealOnScroll animationType="slideUp" delay={0.2}>
-  <CombinedSection currentIndex={currentIndex} />
-</RevealOnScroll>
-
-
-
-      {/* <RevealOnScroll animationType="slideUp" delay={0.2}>
-        <HomeAnimationSection currentIndex={currentIndex} />
-      </RevealOnScroll> */}
+        <CombinedSection currentIndex={currentIndex} />
+      </RevealOnScroll>
 
       <RevealOnScroll
         animationType="flipY"

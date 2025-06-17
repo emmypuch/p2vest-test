@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, Variants, Transition } from "framer-motion";
 import Image from "next/image";
 import TransactionCardStyles from "./TransactionCard.module.scss";
@@ -23,6 +23,29 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
   prevSlide,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIfMobile();
+
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => window.removeEventListener("resize", checkIfMobile);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isMobile, nextSlide]);
 
   const cardVariants: Variants = {
     enter: (direction: "left" | "right") => ({
@@ -57,7 +80,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
         ease: "easeInOut",
       },
     }),
-  };  
+  };
 
   const countryVariants: Variants = {
     hover: {
@@ -86,7 +109,6 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
       transition: { duration: 0.4, ease: "easeIn" },
     },
   };
-  
 
   const currentData = TRANSACTION_DATA[currentIndex];
 
