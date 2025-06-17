@@ -27,30 +27,37 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
   const cardVariants: Variants = {
     enter: (direction: "left" | "right") => ({
       x: direction === "right" ? "100%" : "-100%",
+      rotateY: direction === "right" ? 10 : -10,
       opacity: 0,
-      scale: 0.95,
+      scale: 0.92,
+      filter: "blur(4px)",
     }),
     center: {
       x: 0,
+      rotateY: 0,
       opacity: 1,
       scale: 1,
+      filter: "blur(0px)",
       transition: {
         type: "spring",
-        stiffness: 400,
-        damping: 30,
-        mass: 0.5,
-      } as Transition,
+        stiffness: 180,
+        damping: 22,
+        mass: 0.4,
+        duration: 0.6,
+      },
     },
     exit: (direction: "left" | "right") => ({
       x: direction === "right" ? "-100%" : "100%",
+      rotateY: direction === "right" ? -10 : 10,
       opacity: 0,
-      scale: 0.95,
+      scale: 0.92,
+      filter: "blur(4px)",
       transition: {
-        duration: 0.3,
+        duration: 0.35,
         ease: "easeInOut",
-      } as Transition,
+      },
     }),
-  };
+  };  
 
   const countryVariants: Variants = {
     hover: {
@@ -67,20 +74,19 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
   };
 
   const backgroundVariants: Variants = {
-    enter: {
-      opacity: 0,
-    },
+    enter: { opacity: 0, scale: 1.05 },
     center: {
       opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeInOut",
-      },
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
     },
     exit: {
       opacity: 0,
+      scale: 0.95,
+      transition: { duration: 0.4, ease: "easeIn" },
     },
   };
+  
 
   const currentData = TRANSACTION_DATA[currentIndex];
 

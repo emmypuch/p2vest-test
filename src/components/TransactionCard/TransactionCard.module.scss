@@ -1,5 +1,5 @@
 .transaction-card {
-  padding: 40px 20px;
+  padding: 40px 30px;
   min-height: 100vh;
   color: #fff;
   display: flex;
@@ -224,6 +224,10 @@
     }
   }
 
+  &__logo {
+    width: 100px; 
+  }
+
   @media (max-width: 768px) {
     padding: 20px 15px;
 
@@ -352,16 +356,17 @@
     }
 
     &__logo {
-      width: 40px; 
+      width: 50px; 
       position: absolute;
+      margin-top: 20px;
       top: 20px;
       left: 20px;
     }
 
     &__title {
       font-size: 20px;
-      text-align: center;
-      margin-top: 30px; 
+      margin-left: 10px;
+      margin-top: 45px; 
     }
   }
   
