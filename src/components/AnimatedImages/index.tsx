@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import AnimatedImagesStyles from "./AnimatedImages.module.scss";
+import cloudinaryLoader from "@/lib/cloudinaryLoader";
 
 const imageData = [
   { src: "/assets/images/sendA.png", alt: "Send A", x: -50, y: -30, rotate: -5 },
@@ -40,6 +41,7 @@ const AnimatedImages = () => {
           }}
         >
           <Image
+          loader={cloudinaryLoader}
             src={image.src}
             alt={image.alt}
             width={100}

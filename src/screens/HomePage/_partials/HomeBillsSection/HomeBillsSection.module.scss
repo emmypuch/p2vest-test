@@ -54,7 +54,6 @@
     line-height: 1.6;
     margin-bottom: 30px;
     margin-top: 20px;
-    // max-width: 500px;
     color: #fff !important;
     max-width: 100%;
   }
@@ -109,8 +108,7 @@
 
   // Desktop styles
   @media (min-width: 768px) {
-    padding: 60px 40px;
-    min-height: auto; 
+    padding: 60px 30px;
 
     &__content {
       flex-direction: row;

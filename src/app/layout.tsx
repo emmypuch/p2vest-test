@@ -28,10 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmSans.variable} ${paytoneOne.variable}`}>
       <body>
-        {/* <div>{children}</div> */}
-        <BackgroundProvider>
-          {children}
-        </BackgroundProvider>
+        <BackgroundProvider>{children}</BackgroundProvider>
         <Toaster
           position="top-center"
           richColors

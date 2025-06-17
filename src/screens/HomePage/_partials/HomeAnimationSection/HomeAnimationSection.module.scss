@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   text-align: center;
   background: #fff;
   padding-bottom: 60px;
@@ -47,30 +47,43 @@
   &__image {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    min-width: 350px;
     height: 450px;
     pointer-events: none;
     z-index: 1;
+    padding: 20px;
 
     img {
       object-fit: contain;
       width: 100%;
       height: 100%;
+      border-radius: 52px;
+    }
+
+    @media (max-width: 768px) {
+      min-width: 300px; 
+      height: 360px; 
+      padding: 30px;
+      
+      img {
+        border-radius: 32px; 
+      }
     }
 
     // Desktop adjustments
     @media (min-width: 769px) {
       width: 400px;
       height: 450px;
+      padding: 20px;
     }
   }
 
   &__textBottom {
     position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    padding: 0 20px;
+    bottom: 40px; 
+    left: 30px; 
+    right: 30px;
+    padding: 15px 20px;
     z-index: 2;
     display: flex;
     justify-content: center;
@@ -78,8 +91,9 @@
     p {
       font-size: 16px;
       color: #fff;
-      text-align: justify;
+      text-align: center;
       margin: 0 auto;
+      line-height: 1.5;
     }
 
     // Desktop enhancement
@@ -98,6 +112,14 @@
     // Desktop enhancement
     @media (min-width: 769px) {
       font-size: 52px;
+      bottom: 50px; 
+      left: 40px;
+      right: 40px;
+      padding: 20px;
+
+      p {
+        text-align: justify;
+      }
     }
   }
 

@@ -7,6 +7,7 @@ import TransactionCardStyles from "./TransactionCard.module.scss";
 import DownloadButton from "../DownloadButton";
 import { TRANSACTION_DATA } from "@/data/transactionCardData";
 import DownloadAppModal from "../DownloadAppModal";
+import Link from "next/link";
 
 interface TransactionCardProps {
   currentIndex: number;
@@ -81,15 +82,17 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
     },
   };
 
-
   const currentData = TRANSACTION_DATA[currentIndex];
 
   const BACKGROUND_IMAGES = [
-    "/assets/images/hero-canada.png",
-    "/assets/images/hero-cad.png",
-    "/assets/images/hero-ngn.png",
-    "/assets/images/hero-gha.png",
+    "p2vest/k6pwg8yypccuuyn5eeiz.png",
+    "p2vest/mpihxbhd7onm3y3ishpk.png",
+    "p2vest/meszn7rsaqqyn3xivi57.png",
+    "p2vest/ea1gdchh9tjyvgncn7ze.png",
   ];
+
+  const cloudinaryUrl = (path: string) =>
+    `https://res.cloudinary.com/karenify/image/upload/f_auto,q_auto/${path}`;
 
   return (
     <div className={TransactionCardStyles["transaction-card"]}>
@@ -102,21 +105,28 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
           animate="center"
           exit="exit"
           style={{
-            backgroundImage: `url(${BACKGROUND_IMAGES[currentIndex]})`,
+            backgroundImage: `url(${cloudinaryUrl(
+              BACKGROUND_IMAGES[currentIndex]
+            )})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
           }}
         />
       </AnimatePresence>
 
       <header className={TransactionCardStyles["transaction-card__header"]}>
-        <div className={TransactionCardStyles["transaction-card__logo"]}>
+        <Link href="/">
           <Image
             src="/assets/images/home-hero-logo.svg"
             alt="Revve Logo"
             width={120}
             height={120}
             unoptimized
+            className={TransactionCardStyles["transaction-card__logo"]}
+            style={{ cursor: "pointer" }}
           />
-        </div>
+        </Link>
+
         <h1 className={TransactionCardStyles["transaction-card__title"]}>
           Send. Shop. Spend
         </h1>
@@ -270,7 +280,7 @@ const TransactionCard: React.FC<TransactionCardProps> = ({
 
       <footer className={TransactionCardStyles["transaction-card__footer"]}>
         <div>
-          <p>
+          <p className={TransactionCardStyles["transaction-card__footer-text"]}>
             Seamlessly bridge distances with our effortless remittance service.
             Send support, and financial care to your loved ones back home.
           </p>

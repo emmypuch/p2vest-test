@@ -18,6 +18,10 @@
       width: 100%;
       max-width: 280px;
       height: auto;
+
+      @media (max-width: 480px) {
+        max-width: 220px; 
+      }
     }
 
     @media (min-width: 768px) {
@@ -43,6 +47,19 @@
       max-width: 250px;
       width: 100%;
       height: auto;
+
+      @media (max-width: 480px) {
+        max-width: 200px;
+        left: 14%; 
+      }
+    }
+
+    @media (max-width: 767px) {
+      transform: translate(-50%, -15%);
+      
+      .walletImage {
+        top: 30px !important; 
+      }
     }
 
     @media (min-width: 768px) {

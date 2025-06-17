@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.11.2",
+    "cloudinary": "^2.6.1",
     "formik": "^2.4.6",
     "framer-motion": "^12.18.1",
     "next": "15.3.3",
